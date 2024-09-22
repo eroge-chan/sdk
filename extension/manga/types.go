@@ -69,6 +69,8 @@ type (
 		Filename string `json:"filename"`
 		// Function for the page if image decoding is required.
 		DescrambleFn *DescrambleFn
+		// Request headers
+		Headers map[string]string `json:"headers"`
 	}
 
 	Error string
