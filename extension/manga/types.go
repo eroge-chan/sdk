@@ -53,11 +53,13 @@ type (
 		URL string `json:"url"`
 		// "ID" of the chapter Manga.
 		MangaID string `json:"mangaId"`
+		// OtherProps used when additional parameters need to be passed.
+		OtherProps *map[string]interface{} `json:"otherProps"`
 	}
 
 	DescrambleFn func(bytes []byte) ([]byte, error)
 
-	ChapterPage struct {
+	Page struct {
 		// "ID" of the provider.
 		Provider string `json:"provider"`
 		// Index of the page in the chapter.
@@ -72,6 +74,9 @@ type (
 		// Request headers
 		Headers map[string]string `json:"headers"`
 	}
+
+	// Deprecated: ChapterPage renamed to Page
+	ChapterPage = Page
 
 	Error string
 )
